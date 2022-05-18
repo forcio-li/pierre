@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pierre Forcioli - Software Engineer</title>
+    <meta theme-color="name" content="#2a628f" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <form
+      aria-hidden="true"
+      name="contact"
+      netlify
+      netlify-honeypot="bot-field"
+      style="display: none"
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="bot-field" />
+      <input required type="text" placeholder=" " name="firstname" />
+      <input required type="text" placeholder=" " name="lastname" />
+      <input required type="email" placeholder=" " name="email" />
+      <input required type="text" placeholder=" " name="subject" />
+      <textarea required placeholder=" " name="message"></textarea>
+    </form>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

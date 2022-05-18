@@ -1,0 +1,26 @@
+@use './styles/colors';
+@use './styles/mixins';
+
+@import './styles/fonts';
+
+html {
+  background-color: colors.$white;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: colors.$white;
+  color: colors.$text;
+  font-family: Raleway, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-size: 1.6rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
