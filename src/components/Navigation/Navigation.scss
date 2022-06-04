@@ -4,185 +4,65 @@
 
 .navigation {
   $nav: &;
+  position: fixed;
+  width: 100%;
+  transition: all 0.5s ease-in-out;
 
-  @include mixins.section;
-
-  display: flex;
-  align-items: center;
-  font-size: 2rem;
-  justify-content: space-between;
-  padding: 4rem 0;
-
-  &__name {
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-
-    &-image {
-      display: none;
-      transition: border 0.2s ease-in-out;
-      margin-right: 1.5rem;
-      object-fit: contain;
-      object-position: 100% 0;
-      width: 5rem;
-      height: 5rem;
-      border-radius: 50%;
-      border: colors.$white solid 2px;
-
-      @media screen and (max-width: breakpoints.$lg) {
-        display: inline-block;
-      }
+  &.visible {
+    .navigation__identity {
+      transform: translateY(0);
     }
-  }
 
-  &__toggle {
-    font-size: 2rem;
-    appearance: none;
-    background-color: transparent;
-    border: 0;
-    border-radius: 0.3rem;
-    color: colors.$white;
-    cursor: pointer;
-    display: none;
-    font-weight: 600;
-    position: relative;
-    z-index: 2;
-
-    @media screen and (max-width: breakpoints.$lg) {
-      display: block;
-    }
+    background-color: colors.$primary;
   }
 
   &__wrapper {
-    @media screen and (max-width: breakpoints.$lg) {
-      display: none;
-      background-color: colors.$primary;
-      height: 100vh;
-      left: 0;
-      position: fixed;
-      top: 0;
-      min-width: 50%;
-      max-width: 80%;
-      z-index: 99;
+    @include mixins.section;
 
-      #{$nav} {
-        box-sizing: border-box;
-
-        &__list {
-          flex-direction: column;
-          margin-top: 5rem;
-          overflow-y: auto;
-          list-style: none;
-          padding: 0;
-
-          &-item {
-            color: colors.$white;
-            font-size: 2.3rem;
-            font-weight: 700;
-            margin: 0 5rem;
-            padding: 1.5rem 0;
-            text-align: left;
-            transition: color 0.2s ease-in-out;
-
-            &__icon {
-              display: inline-block;
-              color: colors.$grey;
-              width: 3rem;
-              padding-right: 1rem;
-            }
-          }
-        }
-      }
-    }
-
-    @media screen and (max-width: breakpoints.$sm) {
-      #{$nav} {
-        &__list {
-          &-item {
-            font-size: 2.3rem;
-            transition: color 0.2s ease-in-out;
-          }
-        }
-      }
-    }
-  }
-
-  &--active {
-    #{$nav} {
-      &__toggle {
-        appearance: none;
-        font-size: 2rem;
-      }
-
-      &__wrapper {
-        @media screen and (max-width: breakpoints.$lg) {
-          animation: navigation 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-          display: block;
-
-          @keyframes navigation {
-            from {
-              opacity: 0;
-              transform: translateX(-100vw);
-            }
-
-            to {
-              opacity: 1;
-              transform: translateX(0);
-            }
-          }
-        }
-      }
-    }
-  }
-
-  &__list {
-    column-gap: 4rem;
     display: flex;
-    font-weight: 500;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+  }
 
-    &-item {
-      transition: color 0.2s ease-in-out;
-      &:last-child a {
-        display: none;
-        @media screen and (max-width: breakpoints.$lg) {
-          display: inline-block;
-        }
-      }
-      cursor: pointer;
+  &__identity {
+    transition: transform 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    transform: translateY(-10rem);
+
+    &-picture {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      border: 2px solid colors.$grey;
+    }
+
+    &-name {
+      padding-left: 2rem;
+      font-weight: 600;
+    }
+  }
+
+  &__socials {
+    &-list {
       display: flex;
-      align-items: center;
-      position: relative;
+      justify-content: right;
 
-      &__icon {
-        display: none;
-      }
+      &__item {
+        list-style: none;
+        padding-left: 2.5rem;
+        cursor: pointer;
 
-      &__image {
-        transition: border 0.2s ease-in-out;
-        object-fit: contain;
-        object-position: 100% 0;
-        width: 5rem;
-        height: 5rem;
-        border-radius: 50%;
-        border: colors.$white solid 2px;
-        display: inline-block;
+        i {
+          transition: color 0.2s ease-in-out;
+          transition: transform 0.05 ease-in-out;
 
-        @media screen and (max-width: breakpoints.$lg) {
-          display: none;
+          &:hover {
+            color: colors.$grey;
+            transform: scale(1.1);
+          }
         }
-      }
-
-      &__image:hover {
-        border: colors.$grey solid 2px;
-        transition: border 0.2s ease-in-out;
-      }
-
-      &:hover {
-        transition: color 0.2s ease-in-out;
-        color: colors.$grey;
       }
     }
   }
