@@ -5,14 +5,191 @@
 .section-hero {
   $hero: &;
 
+  &__modal {
+    @include mixins.section;
+
+    &-overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s ease-in-out;
+      background-color: transparent;
+
+      @media screen and (max-width: breakpoints.$md) {
+        align-items: flex-end;
+        border-radius: 1rem;
+      }
+
+      &.visible {
+        background-color: rgba(colors.$white, 0.2);
+        backdrop-filter: blur(5px);
+        .section-hero__modal {
+          transform: scale(1);
+        }
+      }
+    }
+
+    min-width: 30vw;
+    background-color: colors.$black;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 10px rgba(colors.$black, 0.5);
+    transform: scale(0.9);
+    transition: transform 0.25s ease-in-out;
+
+    @media screen and (max-width: breakpoints.$md) {
+      transform: scale(1) translateY(100vh);
+      width: 100%;
+      padding: 3rem;
+    }
+
+    &-content {
+      .title {
+        font-size: 3rem;
+        font-weight: 700;
+        padding-bottom: 2rem;
+      }
+      &-close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding-top: 2rem;
+        padding-right: 2rem;
+
+        button {
+          font-size: 2rem;
+          background-color: transparent;
+          border: none;
+          color: colors.$white;
+
+          i {
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+
+            &:hover {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+
+      &__form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+
+        &-duo {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        &-block {
+          position: relative;
+
+          &.duo {
+            width: 47%;
+          }
+
+          label {
+            font-weight: 600;
+          }
+
+          input {
+            width: calc(100% - 2rem);
+            display: block;
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-radius: 4px;
+            font: inherit;
+            margin-top: 1rem;
+          }
+
+          textarea {
+            resize: vertical;
+            width: calc(100% - 2rem);
+            display: block;
+            padding: 10px;
+            border: none;
+            outline: none;
+            border-radius: 4px;
+            font: inherit;
+            margin-top: 1rem;
+          }
+
+          &.buttons {
+            align-items: center;
+            justify-content: space-between;
+            display: flex;
+
+            .socials {
+              display: flex;
+              column-gap: 2rem;
+            }
+
+            .or {
+              color: rgba(colors.$white, 0.6);
+              padding: 0 3rem;
+            }
+
+            .twitter {
+              text-align: center;
+              width: 4rem;
+              &:hover {
+                background-color: #1d9bf0;
+                color: colors.$white;
+              }
+            }
+
+            .linkedin {
+              text-align: center;
+              width: 4rem;
+              &:hover {
+                background-color: #0a66c2;
+                color: colors.$white;
+              }
+            }
+          }
+
+          button {
+            &[type='submit'] {
+              i {
+                padding-left: 0.5rem;
+              }
+            }
+            border-radius: 4px;
+            display: block;
+            padding: 10px;
+            border: none;
+            outline: none;
+            text-align: right;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+              background-color: rgba(colors.$white, 0.8);
+            }
+          }
+        }
+      }
+    }
+  }
+
   &__wrapper {
-    height: calc(100vh - 23rem);
     @include mixins.section;
 
     padding-top: 20rem;
+    padding-bottom: 20rem;
 
     @media screen and (max-width: breakpoints.$md) {
       padding-top: 10rem;
+      padding-bottom: 10rem;
     }
   }
 
