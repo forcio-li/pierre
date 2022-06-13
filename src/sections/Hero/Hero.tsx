@@ -43,7 +43,12 @@ export const Hero = () => {
             </button>
           </div>
           <div className="section-hero__modal-content-wrapper">
-            <form className="section-hero__modal-content__form">
+            <form
+              className="section-hero__modal-content__form"
+              name="contact"
+              data-netlify="true"
+              method="POST"
+            >
               <div className="section-hero__modal-content__form-duo">
                 <div className="section-hero__modal-content__form-block duo">
                   <label htmlFor="firstname">Firstname</label>
