@@ -261,6 +261,7 @@
       &-text.normal {
         @media screen and (max-width: breakpoints.$md) {
           display: block;
+          font-size: 2.5rem;
         }
 
         display: none;
@@ -298,6 +299,10 @@
         color: colors.$white;
         transition: background-color 0.2s ease-in-out;
         text-transform: uppercase;
+
+        @media screen and (max-width: breakpoints.$md) {
+          padding: 1rem 1.2rem;
+        }
 
         &:hover {
           background-color: rgba(colors.$secondary, 0.8);
