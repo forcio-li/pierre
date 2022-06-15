@@ -4,11 +4,12 @@ import { Navigation } from '../../components';
 
 import Typewriter from 'typewriter-effect';
 import ReactModal from 'react-modal';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export const Hero = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [transitionModal, setTransitionModal] = useState(false);
+  const [formSuccess, setFormSuccess] = useState(false);
 
   const handleOpenModal = () => {
     setModalVisible(true);
@@ -22,12 +23,22 @@ export const Hero = () => {
     setTransitionModal(false);
   };
 
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).has('success')) {
+      handleOpenModal();
+      setFormSuccess(true);
+    }
+  }, []);
+
   return (
     <section id="hero" className="section-hero">
       <Navigation />
       <ReactModal
+        appElement={document.getElementById('root') || document.body}
         isOpen={modalVisible}
-        onRequestClose={handleCloseModal}
+        onRequestClose={
+          formSuccess ? () => window.location.replace('/') : handleCloseModal
+        }
         shouldCloseOnEsc={true}
         shouldCloseOnOverlayClick={true}
         overlayClassName={`section-hero__modal-overlay${
@@ -36,61 +47,79 @@ export const Hero = () => {
         className="section-hero__modal"
       >
         <div className="section-hero__modal-content">
-          <div className="title">Get in touch</div>
           <div className="section-hero__modal-content-close">
-            <button onClick={handleCloseModal}>
+            <button
+              onClick={
+                formSuccess
+                  ? () => window.location.replace('/')
+                  : handleCloseModal
+              }
+            >
               <i className="fa-solid fa-times"></i>
             </button>
           </div>
-          <div className="section-hero__modal-content-wrapper">
-            <form
-              className="section-hero__modal-content__form"
-              name="contact"
-              data-netlify="true"
-              method="POST"
-            >
-              <input type="hidden" name="form-name" value="contact" />
-              <div className="section-hero__modal-content__form-duo">
-                <div className="section-hero__modal-content__form-block duo">
-                  <label htmlFor="firstname">Firstname</label>
-                  <input type="text" id="firstname" name="firstname" />
-                </div>
-                <div className="section-hero__modal-content__form-block duo">
-                  <label htmlFor="lastname">Lastname</label>
-                  <input type="text" id="lastname" name="lastname" />
-                </div>
+          {!formSuccess && (
+            <>
+              <div className="title">Get in touch</div>
+              <div className="section-hero__modal-content-wrapper">
+                <form
+                  className="section-hero__modal-content__form"
+                  name="contact"
+                  data-netlify="true"
+                  method="POST"
+                  action="/?success"
+                >
+                  <input type="hidden" name="form-name" value="contact" />
+                  <div className="section-hero__modal-content__form-duo">
+                    <div className="section-hero__modal-content__form-block duo">
+                      <label htmlFor="firstname">Firstname</label>
+                      <input type="text" id="firstname" name="firstname" />
+                    </div>
+                    <div className="section-hero__modal-content__form-block duo">
+                      <label htmlFor="lastname">Lastname</label>
+                      <input type="text" id="lastname" name="lastname" />
+                    </div>
+                  </div>
+                  <div className="section-hero__modal-content__form-block">
+                    <label htmlFor="email">Email</label>
+                    <input type="email" id="email" name="email" />
+                  </div>
+                  <div className="section-hero__modal-content__form-block">
+                    <label htmlFor="message">Message</label>
+                    <textarea id="message" name="message" />
+                  </div>
+                  <div className="section-hero__modal-content__form-block buttons">
+                    <button type="submit">
+                      Send<i className="fa-solid fa-paper-plane"></i>
+                    </button>
+                    <p className="or">
+                      <i className="fa-solid fa-minus"></i>
+                    </p>
+                    <div className="socials">
+                      <button type="button" className="twitter">
+                        <a href="https://twitter.com/messages/compose?recipient_id=1305564898873823234">
+                          <i className="fa-brands fa-twitter"></i>
+                        </a>
+                      </button>
+                      <button type="button" className="linkedin">
+                        <a href="https://www.linkedin.com/in/pierreforcioli/">
+                          <i className="fa-brands fa-linkedin-in"></i>
+                        </a>
+                      </button>
+                    </div>
+                  </div>
+                </form>
               </div>
-              <div className="section-hero__modal-content__form-block">
-                <label htmlFor="email">Email</label>
-                <input type="email" id="email" name="email" />
+            </>
+          )}
+          {formSuccess && (
+            <>
+              <div className="title">Thanks for contacting me!</div>
+              <div className="section-hero__modal-content-wrapper">
+                I promise to answer as soon as possible
               </div>
-              <div className="section-hero__modal-content__form-block">
-                <label htmlFor="message">Message</label>
-                <textarea id="message" name="message" />
-              </div>
-              <div className="section-hero__modal-content__form-block buttons">
-                <button type="submit">
-                  Send<i className="fa-solid fa-paper-plane"></i>
-                </button>
-                <p className="or">
-                  <i className="fa-solid fa-minus"></i>
-                </p>
-                <div className="socials">
-                  <button type="button" className="twitter">
-                    <a href="https://twitter.com/messages/compose?recipient_id=1305564898873823234">
-                      <i className="fa-brands fa-twitter"></i>
-                    </a>
-                  </button>
-                  <button type="button" className="linkedin">
-                    <a href="https://www.linkedin.com/in/pierreforcioli/">
-                      <i className="fa-brands fa-linkedin-in"></i>
-                    </a>
-                  </button>
-                </div>
-              </div>
-            </form>
-            <div className="section-hero__modal-content__infos"></div>
-          </div>
+            </>
+          )}
         </div>
       </ReactModal>
       <div className="section-hero__wrapper">

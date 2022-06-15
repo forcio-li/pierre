@@ -63,7 +63,7 @@ export const skills: Skill[] = [
     logo: 'devicon-python-plain',
   },
   {
-    id: 12,
+    id: 13,
     name: 'Flask',
     logo: 'devicon-flask-plain',
   },

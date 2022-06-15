@@ -3,6 +3,10 @@
 
 @import './styles/fonts';
 
+* {
+  outline: none;
+}
+
 html {
   background-color: colors.$black;
   font-size: 62.5%;
