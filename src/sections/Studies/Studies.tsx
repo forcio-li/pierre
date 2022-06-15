@@ -1,13 +1,12 @@
 import './Studies.scss';
 import { Study } from '../../types';
-import { studies } from '../../data';
 
 interface StudyItemProps {
   study: Study;
 }
 
 export const StudyItem = ({ study }: StudyItemProps) => {
-  return <div className="study">{study}</div>;
+  //   return <div className="study">{study}</div>;
 };
 
 export const Studies = () => {
@@ -20,9 +19,9 @@ export const Studies = () => {
           during my studies ans past experiences
         </div>
         <div className="section-skills__skills-list">
-          {studies.map((study) => (
+          {/* {studies.map((study) => (
             <StudyItem key={study.id} study={study} />
-          ))}
+          ))} */}
         </div>
       </div>
     </section>
