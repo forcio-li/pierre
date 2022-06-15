@@ -6,6 +6,21 @@ import Typewriter from 'typewriter-effect';
 import ReactModal from 'react-modal';
 import { useState, useEffect } from 'react';
 
+const Contact = () => {
+  const submitHandler = (e: any) => {
+    e.preventDefault();
+    let myForm = document.getElementById('contact-form') as HTMLFormElement;
+    let formData = new FormData(myForm);
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData.toString()).toString(),
+    })
+      .then(() => window.location.replace('/?success'))
+      .catch((error) => alert(error));
+  };
+};
+
 export const Hero = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [transitionModal, setTransitionModal] = useState(false);
