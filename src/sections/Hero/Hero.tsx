@@ -82,7 +82,7 @@ export const Hero = () => {
                   name="contact"
                   data-netlify="true"
                   method="POST"
-                  action="/?success"
+                  action="/#/?success"
                 >
                   <input type="hidden" name="form-name" value="contact" />
                   <div className="section-hero__modal-content__form-duo">
