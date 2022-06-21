@@ -3,7 +3,7 @@
 @use '../../styles/breakpoints';
 
 .navigation {
-  z-index: 20;
+  z-index: 2;
   $nav: &;
   position: fixed;
   width: 100%;

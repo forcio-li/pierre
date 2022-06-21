@@ -9,6 +9,7 @@
     @include mixins.section;
 
     &-overlay {
+      z-index: 3;
       position: fixed;
       top: 0;
       bottom: 0;
@@ -254,6 +255,10 @@
 
   &__content {
     padding-top: 10rem;
+
+    @media screen and (max-width: breakpoints.$md) {
+      padding-top: 4rem;
+    }
     &-me {
       display: flex;
       font-size: 3rem;
