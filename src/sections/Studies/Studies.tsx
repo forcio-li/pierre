@@ -11,7 +11,7 @@ export const StudyItem = ({ study }: StudyItemProps) => {
     <div className="study" key={study.company.id}>
       <div className="study__company">
         <img
-          src={'/public/images/companies/' + study.company.logo}
+          src={'/images/companies/' + study.company.logo}
           alt={study.company.name}
         />
         <div className="study__company-details">
