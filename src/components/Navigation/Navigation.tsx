@@ -1,5 +1,5 @@
 import './Navigation.scss';
-import profile from '/images/profile.jpeg';
+import profile from '/images/profile.png';
 import { useEffect, useState } from 'react';
 
 export const Navigation = () => {

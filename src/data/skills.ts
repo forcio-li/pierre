@@ -1,4 +1,3 @@
-import { sassFalse } from 'sass';
 import { Skill } from '../types';
 
 export const skills: Skill[] = [

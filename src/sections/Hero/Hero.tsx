@@ -1,25 +1,11 @@
 import './Hero.scss';
-import profile from '/images/profile.jpeg';
+import profile from '/images/profile.png';
 import { Navigation } from '../../components';
+import { taglineStrings } from '../../data/taglineStrings';
 
 import Typewriter from 'typewriter-effect';
 import ReactModal from 'react-modal';
 import { useState, useEffect } from 'react';
-
-const Contact = () => {
-  const submitHandler = (e: any) => {
-    e.preventDefault();
-    let myForm = document.getElementById('contact-form') as HTMLFormElement;
-    let formData = new FormData(myForm);
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData.toString()).toString(),
-    })
-      .then(() => window.location.replace('/?success'))
-      .catch((error) => alert(error));
-  };
-};
 
 export const Hero = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -107,9 +93,6 @@ export const Hero = () => {
                     <button type="submit">
                       Send<i className="fa-solid fa-paper-plane"></i>
                     </button>
-                    <p className="or">
-                      <i className="fa-solid fa-minus"></i>
-                    </p>
                     <div className="socials">
                       <button type="button" className="twitter">
                         <a href="https://twitter.com/messages/compose?recipient_id=1305564898873823234">
@@ -119,6 +102,11 @@ export const Hero = () => {
                       <button type="button" className="linkedin">
                         <a href="https://www.linkedin.com/in/pierreforcioli/">
                           <i className="fa-brands fa-linkedin-in"></i>
+                        </a>
+                      </button>
+                      <button type="button" className="mail">
+                        <a href="mailto:pierre.forcioli.06@gmail.com">
+                          <i className="fa-solid fa-envelope"></i>
                         </a>
                       </button>
                     </div>
@@ -168,12 +156,7 @@ export const Hero = () => {
             <div className="section-hero__content-me-text typewriter">
               <Typewriter
                 options={{
-                  strings: [
-                    'available for work',
-                    'really curious',
-                    'in love with the coffee',
-                    'addicted to cats',
-                  ],
+                  strings: taglineStrings,
                   autoStart: true,
                   loop: true,
                 }}
