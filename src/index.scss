@@ -1,5 +1,6 @@
 @use './styles/colors';
 @use './styles/mixins';
+@use './styles/breakpoints';
 
 @import './styles/fonts';
 
@@ -32,6 +33,10 @@ body {
 
 ::-webkit-scrollbar {
   width: 5px;
+
+  @media screen and (max-width: breakpoints.$md) {
+    display: none;
+  }
 
   &-thumb {
     background: rgba(colors.$grey, 0.5);

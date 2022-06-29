@@ -29,7 +29,7 @@ export const mcdonalds: Company = {
 };
 
 export const vence: Company = {
-  name: 'Town Hall of Vence',
+  name: 'Town Hall',
   id: 'vence',
   location: 'Vence, France',
   logo: 'vence.jpeg',

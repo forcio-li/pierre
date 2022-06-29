@@ -6,7 +6,6 @@ export const Navigation = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const handleScrollPosition = () => {
     setScrollPosition(window.pageYOffset);
-    console.log(window.pageYOffset);
   };
 
   useEffect(() => {

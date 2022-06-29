@@ -1,0 +1,19 @@
+@use '../../styles/colors';
+@use '../../styles/mixins';
+@use '../../styles/breakpoints';
+
+.section-footer {
+  $footer: &;
+
+  &__wrapper {
+    @include mixins.section;
+
+    text-align: right;
+    padding-bottom: 4rem;
+    padding-top: 0;
+
+    i {
+      color: #e1003c;
+    }
+  }
+}
