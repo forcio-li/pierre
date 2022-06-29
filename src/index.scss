@@ -12,6 +12,7 @@ html {
   background-color: colors.$black;
   font-size: 62.5%;
   overflow: overlay;
+  scroll-behavior: smooth;
 }
 
 body {

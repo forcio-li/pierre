@@ -17,7 +17,10 @@ export const Navigation = () => {
   }, []);
 
   return (
-    <nav className={`navigation${scrollPosition <= 300 ? '' : ' visible'}`}>
+    <nav
+      id="nav"
+      className={`navigation${scrollPosition <= 300 ? '' : ' visible'}`}
+    >
       <div className="navigation__wrapper">
         <div className="navigation__identity">
           <img

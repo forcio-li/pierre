@@ -15,5 +15,9 @@
     i {
       color: #e1003c;
     }
+
+    @media screen and (max-width: breakpoints.$md) {
+      text-align: center;
+    }
   }
 }

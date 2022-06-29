@@ -38,7 +38,7 @@ export const PortfolioItem = ({ project }: PortfolioItemProps) => {
           .slice(0)
           .reverse()
           .map((language) => {
-            return <i className={language} />;
+            return <i className={language} key={language} />;
           })}
       </div>
     </div>

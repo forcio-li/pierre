@@ -23,6 +23,16 @@ export const Hero = () => {
     setTransitionModal(false);
   };
 
+  const handleScrolltoStudies = () => {
+    const studies = document.getElementById('studies')?.offsetTop;
+    const nav = document.getElementById('nav')?.offsetHeight;
+
+    window.scrollTo({
+      top: nav && studies ? studies - nav : 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <section id="hero" className="section-hero">
       <Navigation />
@@ -146,8 +156,11 @@ export const Hero = () => {
             >
               Get in touch <i className="fa-solid fa-rocket" />
             </button>
-            <button className="section-hero__content-buttons__button inverted">
-              Learn more <i className="fa-solid fa-arrow-down" />
+            <button
+              className="section-hero__content-buttons__button inverted"
+              onClick={handleScrolltoStudies}
+            >
+              More about me <i className="fa-solid fa-arrow-down" />
             </button>
           </div>
         </div>
