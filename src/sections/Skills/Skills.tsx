@@ -23,8 +23,8 @@ export const Skills = () => {
       <div className="section-skills__wrapper">
         <div className="section-skills-title">Skills</div>
         <div className="section-skills-subtitle">
-          Here are all the technologies ans softwares that I have already used
-          during my studies ans past experiences
+          Here are all the technologies and softwares that I have already used
+          during my studies and past experiences
         </div>
         <div className="section-skills__skills-list">
           {skills.map((skill) => (
