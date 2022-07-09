@@ -11,9 +11,22 @@
     text-align: right;
     padding-bottom: 4rem;
     padding-top: 0;
+    display: flex;
+    justify-content: space-between;
 
-    i {
+    .resume {
+      &:hover {
+        color: colors.$secondary;
+        cursor: pointer;
+      }
+    }
+
+    i.fa-heart {
       color: #e1003c;
+    }
+
+    i.fa-file-arrow-down {
+      padding-right: 1rem;
     }
 
     @media screen and (max-width: breakpoints.$md) {
