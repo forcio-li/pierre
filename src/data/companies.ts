@@ -1,5 +1,12 @@
 import { Company } from '../types/Company';
 
+export const hifield: Company = {
+  name: 'Hifield',
+  id: 'hifield',
+  location: 'Remote / Lyon, France',
+  logo: 'hifield.png',
+};
+
 export const holbertonschool: Company = {
   name: 'Holberton School France',
   id: 'holbertonschool',

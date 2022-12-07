@@ -1,6 +1,7 @@
 import { Experience } from '../types';
 import {
   disneylandparis,
+  hifield,
   holbertonschool,
   mcdonalds,
   vence,
@@ -8,11 +9,24 @@ import {
 
 export const experiences: Experience[] = [
   {
+    company: hifield,
+    positions: [
+      {
+        label: 'Full-stack Developer',
+        startDate: new Date(2022, 8, 5),
+        details:
+          "I work for Paonia, a company entity intended to be a publisher of innovative cyber security products.",
+        tags: ['Permanent Contract'],
+      },
+    ],
+  },
+  {
     company: holbertonschool,
     positions: [
       {
         label: 'Software Engineer - Technical Support',
         startDate: new Date(2021, 7, 16),
+        endDate: new Date(2022, 7, 31),
         details:
           "Technical support for the Students in their learning of the Holberton School's program. Answering their questions and advising them on the best way to learn, according to their results. Providing them with the best possible support, in a friendly and professional way. Technical point of contact for the Lille campus.",
         tags: ['Permanent Contract'],

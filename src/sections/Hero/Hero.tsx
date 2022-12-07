@@ -122,10 +122,10 @@ export const Hero = () => {
               Pierre Forcioli
             </span>
             <div className="section-hero__tagline-text-job">
-              Software Engineer at{' '}
-              <a href="https://holbertonschool.com" target="_blank">
+              Full-stack Developer at{' '}
+              <a href="https://www.hifield.fr/" target="_blank">
                 <span className="section-hero__tagline-text-job__link">
-                  Holberton School
+                  Hifield
                 </span>
               </a>
               .
@@ -146,7 +146,7 @@ export const Hero = () => {
               />
             </div>
             <p className="section-hero__content-me-text normal">
-              I am available for work
+              I'm addicted to cats
             </p>{' '}
           </div>
           <div className="section-hero__content-buttons">
