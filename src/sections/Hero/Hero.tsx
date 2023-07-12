@@ -125,7 +125,7 @@ export const Hero = () => {
               Full-stack Developer at{' '}
               <a href="https://www.hifield.fr/" target="_blank">
                 <span className="section-hero__tagline-text-job__link">
-                  Hifield
+                  Almond
                 </span>
               </a>
               .
