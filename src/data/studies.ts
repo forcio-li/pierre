@@ -13,7 +13,7 @@ export const studies: Study[] = [
     ],
     tag: 'Bac +4',
     startDate: new Date(2020, 8, 7),
-    endDate: new Date(2022, 6, 10),
+    endDate: new Date(2022, 5, 10),
   },
   {
     company: school42,
