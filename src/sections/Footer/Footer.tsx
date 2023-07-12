@@ -6,7 +6,7 @@ export const Footer = () => {
       <p className="section-footer__wrapper">
         <div className="resume">
           <a
-            href="/files/CV - Pierre Forcioli - Software Engineer.pdf"
+            href="/files/CV - FR - Pierre Forcioli - Fullstack Developer.pdf"
             download
             target="_blank"
             className="navigation__sociale-list__item-link"
