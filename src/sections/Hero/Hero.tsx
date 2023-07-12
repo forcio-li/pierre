@@ -123,7 +123,7 @@ export const Hero = () => {
             </span>
             <div className="section-hero__tagline-text-job">
               Full-stack Developer at{' '}
-              <a href="https://www.hifield.fr/" target="_blank">
+              <a href="https://www.almond.eu/" target="_blank">
                 <span className="section-hero__tagline-text-job__link">
                   Almond
                 </span>
